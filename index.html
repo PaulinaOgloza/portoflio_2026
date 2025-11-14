@@ -62,42 +62,54 @@
 		<header>
 			<!-- CAROUSEL -->
 		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner text-light text-center">
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+  </div>
 
-                <div class="carousel-item carousel-img-galileo  active">
-                    <div
-                        class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end justify-content-md-center align-items-center">
-                    </div>
-                    <div class="hero-shadow"></div>
-                </div>
-                <div class="carousel-item carousel-img-eva ">
-                    <div
-                        class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end justify-content-md-center align-items-center">
-                        <p class="text-carousel display-3">ART DIRECTION</p>
-                    </div>
-                    <div class="hero-shadow"></div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </header>
+  <!-- Carousel slides -->
+  <div class="carousel-inner text-light text-center">
+
+    <!-- Slide 1: Galileo -->
+    <div class="carousel-item active">
+      <video autoplay loop muted playsinline class="carousel-video-bg">
+        <source src="./intro_banner_video.mp4" type="video/mp4">
+      </video>
+      <div class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end justify-content-md-center align-items-center">
+        <!-- You can add overlay text here if needed -->
+      </div>
+      <div class="hero-shadow"></div>
+    </div>
+
+    <!-- Slide 2: EVA -->
+    <div class="carousel-item">
+      <video autoplay loop muted playsinline class="carousel-video-bg">
+        <source src="./ptaki_banner_crop-video.mp4" type="video/mp4">
+      </video>
+      <div class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end justify-content-md-center align-items-center">
+        <p class="text-carousel display-3">ART DIRECTION</p>
+      </div>
+      <div class="hero-shadow"></div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
 	
 
 <main>
