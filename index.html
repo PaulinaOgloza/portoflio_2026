@@ -164,9 +164,44 @@
 
 
 	<!-- REEL --> 
-   <p class="line py-1 text-center"> <section class=""> <section class="reel-section  darkblue-background py-5 pt-0"> <p id="watch-reel" class="section-title demo-reel-title display-2 text-center pt-5">2025 DEMO REEL</p> <div class="row justify-content-center rounded-4 shadow-sm"> <div class="col-md-9"> <div class="darkblue-background"> <div class="card-body pt-3 "> <div class="ratio ratio-16x9"> <video id="remoteVideo" controls autoplay loop muted playsinline> <source src="https://github.com/PaulinaOgloza/portfolio_2025/releases/download/v1.0/REEL_2025_RELEASES.mp4?raw=1" type="video/mp4">
- Your browser does not support the video tag. </video> </div> <div class="darkblue-background cardcard mx-auto"> <!-- Mute toggle button above the video --> <div class="text-center my-3"> <button id="muteBtn" class="mute-btn"> <i class="fa-solid fa-volume-xmark"></i> Unmute </button> </div> </div> </div> </div> </div> </div>
+ <p class="line py-1 text-center"> 
+<section class=""> 
+  <section class="reel-section darkblue-background py-5 pt-0"> 
+    <p id="watch-reel" class="section-title demo-reel-title display-2 text-center pt-5">2025 DEMO REEL</p> 
+    <div class="row justify-content-center rounded-4 shadow-sm"> 
+      <div class="col-md-9"> 
+        <div class="darkblue-background"> 
+          <div class="card-body pt-3 reel-wrapper"> <!-- Added class reel-wrapper -->
 
+            <div class="ratio ratio-16x9">
+              <video id="remoteVideo" controls autoplay loop muted playsinline preload="auto" poster="/thumbnail_blue.jpg">
+                <source src="https://github.com/PaulinaOgloza/portfolio_2025/releases/download/v1.0/REEL_2025_RELEASES.mp4?raw=1" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+
+              <!-- Loading spinner -->
+              <div class="loading-spinner" id="videoLoader"></div>
+            </div>
+
+            <div class="darkblue-background cardcard mx-auto"> 
+              <!-- Mute toggle button above the video --> 
+              <div class="text-center my-3"> 
+                <button id="muteBtn" class="mute-btn"> 
+                  <i class="fa-solid fa-volume-xmark"></i> Unmute 
+                </button> 
+              </div> 
+            </div>
+
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </section>
+</section>
+
+
+
+ 
 <!-- <div class="full-width-line"></div> -->
 
 <!-- ABOUT ME -->

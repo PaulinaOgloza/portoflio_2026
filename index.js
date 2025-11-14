@@ -54,3 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const video = document.getElementById("remoteVideo");
+
+video.addEventListener("play", () => {
+  video.style.filter = "none";
+});

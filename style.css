@@ -396,6 +396,28 @@ header {
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
+.reel-thumbnail {
+  filter: blur(8px) brightness(0.7);
+  position: relative;
+}
+
+.reel-thumbnail::after {
+  content: "\f04b"; /* FontAwesome play icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: white;
+}
+
+#remoteVideo {
+  filter: blur(50px) brightness(0.9);
+  transition: filter 0.5s ease; /* smooth transition when we remove blur */
+}
+
 /* CONTACT  */
 
 .contact-section {
