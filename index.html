@@ -11,13 +11,10 @@
 			crossorigin="anonymous"
 		/>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 		
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" href="style.css" />
 		<script src="https://kit.fontawesome.com/379939276a.js" crossorigin="anonymous"></script>
@@ -76,7 +73,7 @@
     <!-- Slide 1: Galileo -->
     <div class="carousel-item active">
       <video autoplay loop muted playsinline class="carousel-video-bg">
-        <source src="./intro_banner_video.mp4" type="video/mp4">
+        <source src="intro_banner_video.mp4" type="video/mp4">
       </video>
       <div class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end justify-content-md-center align-items-center">
         <!-- You can add overlay text here if needed -->
@@ -87,7 +84,7 @@
     <!-- Slide 2: EVA -->
     <div class="carousel-item">
       <video autoplay loop muted playsinline class="carousel-video-bg">
-        <source src="./ptaki_banner_crop-video.mp4" type="video/mp4">
+        <source src="ptaki_banner_crop_video.mp4" type="video/mp4">
       </video>
       <div class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end justify-content-md-center align-items-center">
         <p class="text-carousel display-3">ART DIRECTION</p>
@@ -164,18 +161,25 @@
 
 
 	<!-- REEL --> 
- <p class="line py-1 text-center"> 
-<section class=""> 
-  <section class="reel-section darkblue-background py-5 pt-0"> 
-    <p id="watch-reel" class="section-title demo-reel-title display-2 text-center pt-5">2025 DEMO REEL</p> 
-    <div class="row justify-content-center rounded-4 shadow-sm"> 
-      <div class="col-md-9"> 
-        <div class="darkblue-background"> 
-          <div class="card-body pt-3 reel-wrapper"> <!-- Added class reel-wrapper -->
+<!-- REEL -->
+<p class="line py-1 text-center"></p>
+<section>
+  <section class="reel-section darkblue-background py-5 pt-0">
+    <p id="watch-reel" class="section-title demo-reel-title display-2 text-center pt-5">
+      2025 DEMO REEL
+    </p>
 
-            <div class="ratio ratio-16x9">
-              <video id="remoteVideo" controls autoplay loop muted playsinline preload="auto" poster="thumbnail_blue.jpg">
-                <source src="https://github.com/PaulinaOgloza/portfolio_2025/releases/download/v1.0/REEL_2025_RELEASES.mp4?raw=1" type="video/mp4">
+    <div class="row justify-content-center rounded-4 shadow-sm">
+      <div class="col-md-9">
+        <div class="darkblue-background">
+          <div class="card-body pt-3 reel-wrapper">
+
+            <!-- Video Container -->
+            <div class="ratio ratio-16x9 position-relative">
+
+              <video id="remoteVideo" controls loop muted playsinline preload="none"
+                     poster="thumbnail_blue.jpg" >
+                <source id="videoSource" src="reel_2025_720.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
 
@@ -183,21 +187,33 @@
               <div class="loading-spinner" id="videoLoader"></div>
             </div>
 
-            <div class="darkblue-background cardcard mx-auto"> 
-              <!-- Mute toggle button above the video --> 
-              <div class="text-center my-3"> 
-                <button id="muteBtn" class="mute-btn"> 
-                  <i class="fa-solid fa-volume-xmark"></i> Unmute 
-                </button> 
-              </div> 
+            <!-- Quality Selector -->
+            <div class="text-center mt-3">
+              <label for="videoQuality" class="me-2">Quality:</label>
+              <select id="videoQuality" class="form-select w-auto d-inline-block">
+                <!-- <option value="540">540p (Fastest)</option> -->
+                <option value="720" selected>720p (Recommended)</option>
+                <option value="1080">1080p (High Quality)</option>
+              </select>
             </div>
 
-          </div> 
-        </div> 
-      </div> 
-    </div> 
+            <!-- Mute Button -->
+            <div class="darkblue-background cardcard mx-auto">
+              <div class="text-center my-3">
+                <button id="muteBtn" class="mute-btn">
+                  <i class="fa-solid fa-volume-xmark"></i> Unmute
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 </section>
+
 
 
 
