@@ -1,21 +1,17 @@
-// ===== SMOOTH SCROLL TO SECTIONS =====
-function scrollToSection(id) {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".navbar");
-  const navbarCollapse = document.querySelector(".navbar-collapse");
+  // ===== Smooth Scroll =====
+  function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  }
 
-  // --- Smooth scroll for nav links ---
   const links = [
     { selector: ".navbar-watch-reel", target: "watch-reel" },
     { selector: ".navbar-about-me", target: "about-me" },
     { selector: ".navbar-contact", target: "contact" },
   ];
+
+  const navbarCollapse = document.querySelector(".navbar-collapse");
 
   links.forEach((link) => {
     const el = document.querySelector(link.selector);
@@ -23,40 +19,88 @@ document.addEventListener("DOMContentLoaded", () => {
       el.addEventListener("click", (e) => {
         e.preventDefault();
         scrollToSection(link.target);
-
-        // If mobile menu is open, close it smoothly
         const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-        if (bsCollapse && navbarCollapse.classList.contains("show")) {
+        if (bsCollapse && navbarCollapse.classList.contains("show"))
           bsCollapse.hide();
-        }
       });
     }
   });
 
-  // ===== LEARN MORE BUTTON =====
-  const learnMoreBtn = document.getElementById("learnMoreBtn");
-  const moreText = document.getElementById("moreText");
+  // ===== Video Controls =====
+  const video = document.getElementById("remoteVideo");
+  const videoSource = document.getElementById("videoSource");
+  const videoLoader = document.getElementById("videoLoader");
+  const qualitySelect = document.getElementById("videoQuality");
+  const videoOverlay = document.getElementById("videoOverlay");
+  const muteBtn = document.getElementById("muteBtn");
 
-  if (learnMoreBtn && moreText) {
-    moreText.addEventListener("show.bs.collapse", () => {
-      learnMoreBtn.textContent = "See less";
-    });
+  const sources = {
+    720: "reel_2025_720.mp4",
+    1080: "reel_2025_1080.mp4",
+  };
 
-    moreText.addEventListener("hide.bs.collapse", () => {
-      learnMoreBtn.textContent = "Learn More";
-    });
+  // Show loader
+  function showLoader() {
+    video.style.filter = "blur(12px)";
+    videoLoader.style.display = "block";
   }
 
-  // ===== NAVBAR SCROLL EFFECT =====
-  window.addEventListener("scroll", () => {
-    if (navbar) {
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    }
+  // Hide loader
+  function hideLoader() {
+    video.style.filter = "none";
+    videoLoader.style.display = "none";
+  }
+
+  // Load video quality without autoplay
+  function loadVideoQuality(resolution) {
+    const currentTime = video.currentTime || 0;
+    const wasPaused = video.paused;
+
+    showLoader();
+
+    videoSource.src = sources[resolution];
+    video.load();
+
+    video.addEventListener(
+      "canplay",
+      () => {
+        video.currentTime = currentTime;
+        if (!wasPaused) video.play();
+      },
+      { once: true }
+    );
+  }
+
+  qualitySelect.addEventListener("change", () => {
+    loadVideoQuality(qualitySelect.value);
   });
-});
 
-const video = document.getElementById("remoteVideo");
+  // Overlay click to play
+  videoOverlay.addEventListener("click", () => {
+    video.play();
+  });
 
-video.addEventListener("play", () => {
-  video.style.filter = "none";
+  // Play/pause events
+  video.addEventListener("play", () => {
+    hideLoader();
+    videoOverlay.style.display = "none";
+  });
+
+  video.addEventListener("pause", () => {
+    video.style.filter = "blur(12px)";
+    videoOverlay.style.display = "flex";
+  });
+
+  // Mute/unmute button
+  muteBtn.addEventListener("click", () => {
+    video.muted = !video.muted;
+    muteBtn.innerHTML = video.muted
+      ? '<i class="fa-solid fa-volume-xmark"></i> Unmute'
+      : '<i class="fa-solid fa-volume-high"></i> Mute';
+  });
+
+  // Set default quality without autoplay
+  videoSource.src = sources[720];
+  video.load();
+  hideLoader();
 });
