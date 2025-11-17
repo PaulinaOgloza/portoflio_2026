@@ -97,33 +97,33 @@ h3 {
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* space between icon and text */
+  gap: 0.5rem;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 1.25rem;
   color: #fff;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* smoother ease-out */
 }
 
 .navbar-brand svg {
   width: 2rem;
   height: 2rem;
   fill: currentColor;
-  transition: transform 0.3s ease, fill 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* smooth transform + color */
 }
 
-/* Hover effect on brand */
+/* Hover effect */
 .navbar-brand:hover {
-  color: #813ffb; /* accent color */
-  transform: scale(1.05); /* subtle pop */
+  color: #813ffb;
+  transform: scale(1.07); /* slightly larger pop */
 }
 
 .navbar-brand:hover svg {
-  transform: scale(1.2) rotate(-5deg); /* playful icon animation */
+  transform: scale(1.25) rotate(-5deg); /* more playful but smooth */
   fill: #813ffb;
 }
 
-/* Optional: make text responsive */
+/* Responsive tweaks */
 @media (max-width: 768px) {
   .navbar-brand {
     font-size: 1rem;
@@ -593,7 +593,7 @@ header {
 /* Hover effect */
 .send-email-btn:hover svg {
   transform: rotate(-10deg) scale(1.1);
-  fill: #faca8b; /* optional hover color */
+  fill: #eab4ff; /* optional hover color */
 }
 
 /* BUTTONS */
