@@ -8,16 +8,7 @@
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
   rel="stylesheet"
 >
-
 <link rel="stylesheet" href="style.css" />
-
-<script src="https://kit.fontawesome.com/379939276a.js" crossorigin="anonymous"></script>
-
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-heart-fill" viewBox="0 0 16 16">
-  <path d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.707L8 2.207 1.354 8.853a.5.5 0 1 1-.708-.707z"/>
-  <path d="m14 9.293-6-6-6 6V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5zm-6-.811c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018"/>
-</svg>
-
 		<title>Paulina Ogłoza-Jażdżejewska Portfolio</title>
 	</head>
 
@@ -60,7 +51,8 @@
 
 		<header>
 			<!-- CAROUSEL -->
-		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+		<!-- CAROUSEL -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <!-- Indicators -->
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -72,26 +64,24 @@
   <!-- Carousel slides -->
   <div class="carousel-inner text-light text-center">
 
-    <!-- Slide 1: Galileo -->
-    <div class="carousel-item active">
+    <!-- Slide 1 -->
+    <div class="carousel-item active" style="background-image: url('fallback1.jpg');">
       <video autoplay loop muted playsinline class="carousel-video-bg">
         <source src="intro_banner_video.mp4" type="video/mp4">
       </video>
-      <div class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end justify-content-md-center align-items-center">
-        <!-- You can add overlay text here if needed -->
+      <div class="carousel-caption">
+        <!-- Optional overlay text -->
       </div>
-      <div class="hero-shadow"></div>
     </div>
 
-    <!-- Slide 2: EVA -->
-    <div class="carousel-item">
+    <!-- Slide 2 -->
+    <div class="carousel-item" style="background-image: url('fallback2.jpg');">
       <video autoplay loop muted playsinline class="carousel-video-bg">
         <source src="ptaki_banner_crop_video.mp4" type="video/mp4">
       </video>
-      <div class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end justify-content-md-center align-items-center">
-        <p class="text-carousel display-3">ART DIRECTION</p>
+      <div class="carousel-caption">
+        <p class="text-carousel">ART DIRECTION</p>
       </div>
-      <div class="hero-shadow"></div>
     </div>
 
   </div>
@@ -108,6 +98,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
 
 	
 
@@ -138,7 +129,7 @@
           <div class="icon-wrap mb-4">
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M353.8 118.1L330.2 70.3C326.3 62 314.1 61.7 309.8 70.3L286.2 118.1L233.9 125.6C224.6 127 220.6 138.5 227.5 145.4L265.5 182.4L256.5 234.5C255.1 243.8 264.7 251 273.3 246.7L320.2 221.9L366.8 246.3C375.4 250.6 385.1 243.4 383.6 234.1L374.6 182L412.6 145.4C419.4 138.6 415.5 127.1 406.2 125.6L353.9 118.1zM288 320C261.5 320 240 341.5 240 368L240 528C240 554.5 261.5 576 288 576L352 576C378.5 576 400 554.5 400 528L400 368C400 341.5 378.5 320 352 320L288 320zM80 384C53.5 384 32 405.5 32 432L32 528C32 554.5 53.5 576 80 576L144 576C170.5 576 192 554.5 192 528L192 432C192 405.5 170.5 384 144 384L80 384zM448 496L448 528C448 554.5 469.5 576 496 576L560 576C586.5 576 608 554.5 608 528L608 496C608 469.5 586.5 448 560 448L496 448C469.5 448 448 469.5 448 496z"/></svg>
           </div>
-          <h3 class="card-title mb-4">9 years of industry <br> experience</br></h3>
+          <h3 class="card-title mb-4">9 years of industry <br> experience</h3>
           <p class="card-text">
             Contributed to projects for brands such as Rossmann, Netflix and Ocean Technologies. 
           </p>
@@ -150,7 +141,7 @@
           <div class="icon-wrap mb-4">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M128 464L213.7 255.8C230.7 214.5 261.5 180.5 300.9 159.5L447.8 81.2C460.1 74.6 474.3 85.9 470.8 99.4L433.6 241.8C432.5 245.9 432 250.1 432 254.4C432 260.7 433.2 267 435.6 272.9L512 464L304.9 464L316.7 428.6L357.1 415.1C363.6 412.9 368 406.8 368 399.9C368 393 363.6 386.9 357.1 384.7L316.7 371.2L303.2 330.8C301 324.4 294.9 320 288 320C281.1 320 275 324.4 272.8 330.9L259.3 371.3L218.9 384.8C212.4 387 208 393.1 208 400C208 406.9 212.4 413 218.9 415.2L259.3 428.7L271.1 464.1L128 464.1zM343.6 205.5C342.5 202.2 339.5 200 336 200C332.5 200 329.5 202.2 328.4 205.5L321.7 225.7L301.5 232.4C298.2 233.5 296 236.5 296 240C296 243.5 298.2 246.5 301.5 247.6L321.7 254.3L328.4 274.5C329.5 277.8 332.5 280 336 280C339.5 280 342.5 277.8 343.6 274.5L350.3 254.3L370.5 247.6C373.8 246.5 376 243.5 376 240C376 236.5 373.8 233.5 370.5 232.4L350.3 225.7L343.6 205.5zM96 512L544 512C561.7 512 576 526.3 576 544C576 561.7 561.7 576 544 576L96 576C78.3 576 64 561.7 64 544C64 526.3 78.3 512 96 512z"/></svg>
           </div>
-          <h3 class="card-title mb-4">Cross-disciplinary <br> designer </br></h3>
+          <h3 class="card-title mb-4">Cross-disciplinary <br> designer</h3>
           <p class="card-text">
             I blend motion and UI design with 2D/3D graphics and front-end tools like HTML, CSS, JavaScript.
 
@@ -193,13 +184,14 @@
 
             <!-- Video Container -->
             <div id="videoOverlay" class="video-overlay">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136L128 504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"/></svg>
-  </svg>
-</div>
-            <div class="ratio ratio-16x9 position-relative">
+              <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <circle cx="320" cy="320" r="320" fill="rgba(0,0,0,0.5)" />
+                <polygon points="230,180 230,460 460,320" fill="#fff"/>
+              </svg>
+            </div>
 
-              <video id="remoteVideo" controls muted playsinline preload="none"
-                     poster="thumbnail_blue.jpg" >
+            <div class="ratio ratio-16x9 position-relative">
+              <video id="remoteVideo" controls muted playsinline preload="none" poster="thumbnail_blue.jpg">
                 <source id="videoSource" src="reel_2025_720.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -212,7 +204,6 @@
             <div class="text-center mt-3">
               <label for="videoQuality" class="me-2">Quality:</label>
               <select id="videoQuality" class="form-select w-auto d-inline-block">
-                <!-- <option value="540">540p (Fastest)</option> -->
                 <option value="720" selected>720p (Recommended)</option>
                 <option value="1080">1080p (High Quality)</option>
               </select>
@@ -234,6 +225,7 @@
 
   </section>
 </section>
+
 
 
 
