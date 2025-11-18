@@ -4,7 +4,8 @@
   padding: 0;
 }
 
-html {
+html 
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: linear-gradient(135deg, #1c163a 0%, #0d0a1f 50%, #2b1f4d 100%);
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -12,21 +13,6 @@ html {
   min-height: 100%;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("Poppins-Regular.woff2") format("woff2"),
-    url("Poppins-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("Poppins-Bold.woff2") format("woff2"),
-    url("Poppins-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
 
 body {
   font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -61,6 +47,23 @@ body::before {
   pointer-events: none;
   z-index: -1;
 }
+
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Regular.woff2") format("woff2"),
+    url("Poppins-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Bold.woff2") format("woff2"),
+    url("Poppins-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 html,
 body {
