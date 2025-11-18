@@ -4,7 +4,22 @@
   padding: 0;
 }
 
-html 
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Regular.woff2") format("woff2"),
+    url("Poppins-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Bold.woff2") format("woff2"),
+    url("Poppins-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+html {
   font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: linear-gradient(135deg, #1c163a 0%, #0d0a1f 50%, #2b1f4d 100%);
   font-size: 62.5%;
@@ -13,15 +28,14 @@ html
   min-height: 100%;
 }
 
-
 body {
   font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.8rem;
   margin: 0;
   min-height: 100vh;
   color: #ffffff;
-  background: inherit; /* use the html background */
-  position: relative; /* ensure pseudo-element works */
+  background: inherit;
+  position: relative;
   overflow-x: hidden;
 }
 
@@ -48,23 +62,6 @@ body::before {
   z-index: -1;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("Poppins-Regular.woff2") format("woff2"),
-    url("Poppins-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("Poppins-Bold.woff2") format("woff2"),
-    url("Poppins-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-
 html,
 body {
   scroll-behavior: smooth;
@@ -78,28 +75,6 @@ h1 {
 
 h3 {
   margin: 6px;
-}
-
-@font-face {
-  font-family: "FontAwesome";
-  src: url("../fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype");
-  src: url("../fonts/fontawesome-webfont.eot?v=4.4.0");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.4.0")
-      format("embedded-opentype"),
-    url("../fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"),
-    url("../fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"),
-    url("../fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular")
-      format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-.fa {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .section-title {
@@ -259,23 +234,16 @@ header {
 }
 
 /* CAROUSEL */
-.text-carousel {
-  position: relative;
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #fff;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  /* margin-bottom: 8rem; */
-}
+/* ------------------ Carousel Styles ------------------ */
 
 .carousel-item {
   position: relative;
-  height: 300px;
+  height: 80vh; /* Fill 80% of viewport height */
+  min-height: 400px; /* Minimum height for small screens */
   background-position: center;
   background-size: cover;
   z-index: 0;
-  /* margin-top: 0px; */
+  overflow: hidden; /* Ensures video doesn’t spill out */
 }
 
 .carousel-video-bg {
@@ -284,8 +252,25 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Makes the video fill the slide */
-  z-index: -1; /* Puts it behind captions */
+  object-fit: cover; /* Fills container without distortion */
+  z-index: -1; /* Behind captions */
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.text-carousel {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Main */
@@ -479,31 +464,28 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex; /* center SVG */
+  display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.3); /* optional overlay */
-}
-
-.video-overlay svg {
-  width: 4rem;
-  height: 4rem;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  background: rgba(0, 0, 0, 0.3); /* overlay */
+  z-index: 2;
+  transition: background 0.3s ease;
 }
 
 .video-overlay:hover {
   background: rgba(0, 0, 0, 0.45);
 }
 
-/* ===== Play Icon ===== */
-.video-overlay::after {
-  content: "\f04b"; /* FontAwesome play */
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 4rem;
-  color: white;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+.video-overlay .play-icon {
+  width: 4rem;
+  height: 4rem;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.video-overlay:hover .play-icon {
+  transform: scale(1.1);
 }
 
 /* ===== Section Title ===== */
@@ -751,27 +733,6 @@ footer {
     transform: translateY(0) scale(1.2) rotate(0deg);
   }
 }
-
-/* --- ICONS ONLY --- */
-/* .icon-wrap i {
-  padding-top: 10px;
-  display: inline-block;
-  font-size: 4rem;
-  color: rgb(255, 255, 255);
-  transition: all 0.4s ease;
-  animation: float 3s ease-in-out infinite;
-  margin-bottom: 1.5rem;
-} */
-
-/* Gradient + subtle scale + glow only on hover */
-/* .home-card:hover .icon-wrap i {
-  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 3s linear infinite, float 3s ease-in-out infinite;
-  transform: scale(1.3);
-} */
 
 /* --- Animations --- */
 @keyframes float {
