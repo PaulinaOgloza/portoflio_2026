@@ -68,27 +68,7 @@ h1 {
 h3 {
   margin: 6px;
 }
-@font-face {
-  font-family: "FontAwesome";
-  src: url("../fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype");
-  src: url("../fonts/fontawesome-webfont.eot?v=4.4.0");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.4.0")
-      format("embedded-opentype"),
-    url("../fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"),
-    url("../fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"),
-    url("../fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular")
-      format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-.fa {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+
 .section-title {
   font-size: 4rem;
   padding-top: 4rem;
@@ -129,26 +109,26 @@ h3 {
   }
 }
 .navbar-nav .nav-link svg {
-  width: 1.25rem; /* adjust size */
+  width: 1.25rem;
   height: 1.25rem;
-  fill: currentColor; /* matches text */
-  margin-right: 0.3rem; /* spacing before text */
+  fill: currentColor;
+  margin-right: 0.3rem;
   vertical-align: middle;
   transition: transform 0.3s ease;
-} /* Optional hover pop */
+}
 .navbar-nav .nav-link:hover svg {
   transform: scale(1.2);
-  fill: #813ffb; /* accent color */
-} /* Ensure nav-link color is visible */
+  fill: #813ffb;
+}
 .navbar-nav .nav-link {
-  color: #fff; /* or whatever fits your navbar */
+  color: #fff;
   transition: color 0.3s ease;
 }
 .navbar-nav .nav-link:hover {
   color: #813ffb;
 }
 .glassy-navbar {
-  background: rgba(12, 10, 25, 0.75); /* deep, cinematic tone */
+  background: rgba(12, 10, 25, 0.75);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -197,14 +177,15 @@ h3 {
 .glassy-navbar .nav-link:hover {
   color: #e4e4ff;
   transform: translateY(-2px);
-} /* --- Burger Icon --- */
+}
+/* Burger Icon  */
 .navbar-toggler {
   border: none;
   outline: none;
 }
 .navbar-toggler:focus {
   box-shadow: none;
-} /* Make the burger icon white */
+}
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 } /* HEADER */
@@ -218,14 +199,14 @@ header {
   font-weight: 700;
   letter-spacing: 1px;
   color: #fff;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* margin-bottom: 8rem; */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 .carousel-item {
   position: relative;
   height: 300px;
   background-position: center;
   background-size: cover;
-  z-index: 0; /* margin-top: 0px; */
+  z-index: 0;
 }
 .carousel-video-bg {
   position: absolute;
@@ -233,8 +214,8 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Makes the video fill the slide */
-  z-index: -1; /* Puts it behind captions */
+  object-fit: cover;
+  z-index: -1;
 } /* Main */
 .home-card {
   position: relative;
@@ -261,7 +242,28 @@ header {
 }
 .home-card:hover {
   box-shadow: 8px 8px 8px 3px #433b7228;
-} /* LINE */
+}
+
+/* Subtle pulsing border glow using line colors */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 8px rgba(252, 70, 107, 0.2), 0 0 8px rgba(63, 94, 251, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(252, 70, 107, 0.35),
+      0 0 14px rgba(63, 94, 251, 0.35);
+  }
+  80% {
+    box-shadow: 0 0 8px rgba(252, 70, 107, 0.2), 0 0 8px rgba(63, 94, 251, 0.2);
+  }
+}
+
+/* Apply subtle pulsing glow */
+.home-card {
+  animation: pulse-border 6s infinite ease-in-out;
+}
+
+/* LINE */
 .line {
   height: 4px;
   background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
@@ -362,7 +364,8 @@ header {
   object-fit: cover;
   display: block;
   margin: -140px auto 30px auto;
-} /* REEL */ /* ===== Reel Section ===== */
+}
+/* REEL */ /* ===== Reel Section ===== */
 .reel-section {
   position: relative;
   padding: 8rem; /* space top and bottom */
@@ -407,14 +410,8 @@ header {
 .video-overlay:hover {
   background: rgba(0, 0, 0, 0.45);
 } /* ===== Play Icon ===== */
-.video-overlay::after {
-  content: "\f04b"; /* FontAwesome play */
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 4rem;
-  color: white;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-} /* ===== Section Title ===== */
+
+/* ===== Section Title ===== */
 .demo-reel-title {
   position: relative;
   font-size: 3rem;
@@ -506,7 +503,9 @@ header {
 .send-email-btn:hover svg {
   transform: rotate(-10deg) scale(1.1);
   fill: #eab4ff; /* optional hover color */
-} /* BUTTONS */
+}
+
+/* BUTTONS */
 .unmute-btn {
   padding: 10px 0;
   margin-left: 10px;
@@ -546,6 +545,7 @@ header {
   ); /* box-shadow: 0 0 15px rgba(255, 120, 244, 0.596), 0 0 20px #6639afa9,0 0 30px #452b8b9d; */
   box-shadow: 0 0 10px rgba(186, 116, 243, 0.527);
 }
+
 .learn-more-btn {
   padding: 10px 0;
   margin-left: 10px;
@@ -581,6 +581,25 @@ header {
   transform: translate(-50%, -50%);
   display: none;
 }
+
+@keyframes pulse-border-learn-more {
+  0% {
+    box-shadow: 0 0 8px rgba(252, 70, 107, 0.2), 0 0 8px rgba(63, 94, 251, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(252, 70, 107, 0.35),
+      0 0 14px rgba(63, 94, 251, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(252, 70, 107, 0.2), 0 0 8px rgba(63, 94, 251, 0.2);
+  }
+}
+
+.learn-more-btn,
+.send-email-btn {
+  animation: pulse-border-learn-more 6s infinite ease-in-out;
+}
+
 @keyframes spin {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -609,7 +628,8 @@ footer {
   margin-right: 0.5em;
   transition: transform 0.3s ease, color 0.3s ease;
   animation: gradientShift 3s linear infinite, float 3s ease-in-out infinite;
-} /* Hover "pop" effect */
+}
+/* Hover "pop" effect */
 .home-card:hover .icon {
   animation: gradientShift 3s linear infinite, pop 0.5s ease forwards;
   color: #813ffb;
@@ -712,21 +732,93 @@ footer {
   background: rgba(18, 18, 22, 0.95);
   padding: 0.6rem 0;
 }
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.scroll-animate.scrolled-into-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* About Me (cards) */
+.about-me.card.scroll-animate {
+  transform: translateY(25px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.about-me.card.scroll-animate.scrolled-into-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Home Section */
+#home.scroll-animate {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+#home.scroll-animate.scrolled-into-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Contact Section */
+.contact-section.scroll-animate {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.9s ease, opacity 0.6s ease;
+}
+.contact-section.scroll-animate.scrolled-into-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Reel Section scroll animation */
+.scroll-inner.scroll-animate {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.9s ease, opacity 0.6s ease;
+}
+
+.scroll-inner.scroll-animate.scrolled-into-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ===========================
+   XL 1200px+
+=========================== */
 @media (min-width: 1200px) {
   .col-md-4.home-box {
-    flex: 1 1 30%; /* allows spacing on large screens */
+    flex: 1 1 30%;
   }
 }
+
+/* ===========================
+   1300px+
+=========================== */
 @media (min-width: 1300px) {
   .carousel-item {
     height: 400px;
   }
-  @media (max-width: 700px) {
-    .basket-text {
-      display: none;
-    }
+}
+
+/* ===========================
+   Hide basket text on phones
+=========================== */
+@media (max-width: 700px) {
+  .basket-text {
+    display: none;
   }
-} /* Medium screens */
+}
+
+/* ===========================
+   Medium Screens (Bootstrap md-lg)
+=========================== */
 @media (max-width: 991px) {
   .navbar-collapse .nav-item .nav-link {
     justify-content: center !important;
@@ -734,32 +826,82 @@ footer {
     display: flex;
     align-items: center;
   }
+
   .navbar-collapse .nav-item .nav-link i {
     margin-right: 0.4rem;
   }
-} /* Small screens */
+}
+
+/* ===========================
+   Small screens ~800px
+=========================== */
 @media (max-width: 800px) {
   .about-me img {
     width: 250px;
     height: 250px;
   }
 }
+
+/* ===========================
+   Home boxes layout
+=========================== */
+
+/* force row alignment on large screens */
 .home-boxes .row {
   display: flex;
-  flex-wrap: nowrap; /* prevents wrapping until forced */
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 2rem; /* spacing between cards */
-} /* Each card should shrink slightly if needed */
+  gap: 2rem;
+}
+
 .home-boxes .col-lg-5 {
-  flex: 1 1 30%; /* allows resizing while staying in a row */
-  max-width: 33%; /* three in a row */
-} /* Once screen is too small, stack vertically */
+  flex: 1 1 30%;
+  max-width: 33%;
+}
+
+/* stack them when screen < 1100px */
 @media (max-width: 1100px) {
   .home-boxes .row {
-    flex-wrap: wrap; /* allow wrapping */
+    flex-wrap: wrap;
   }
+
   .home-boxes .col-lg-5 {
     flex: 1 1 100%;
     max-width: 100%;
+  }
+}
+
+/* Phones (xs & small screens) */
+@media (max-width: 575.98px) {
+  .reel-section {
+    padding: 3rem 1rem;
+  }
+
+  /* make the video visibly taller */
+  .ratio-16x9 {
+    min-height: 260px;
+  }
+
+  .reel-section video {
+    filter: blur(8px) brightness(0.95);
+    border-radius: 14px;
+  }
+
+  .video-overlay svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (hover: none) {
+  .about-me.card {
+    transform: translateY(25px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+
+  .about-me.card.scrolled-into-view {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
