@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // NOTE: Do NOT handle muteBtn here because the inline script is already doing it
 
   const sources = {
-    720: "reel_2025_720.mp4",
-    1080: "reel_2025_1080.mp4",
+    720: "reel_2025_1280x720.mp4",
+    1080: "reel_2025_1280x720.mp4",
   };
 
   // ===== Loader Functions =====
@@ -116,4 +116,27 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollElements.forEach((el) => observer.observe(el));
 });
 
+// ===== Swap Carousel Slide 2 Video on Mobile =====
+// document.addEventListener("DOMContentLoaded", () => {
+//   const carouselSlide2 = document.querySelectorAll(
+//     "#carouselExampleCaptions .carousel-item"
+//   )[1];
+//   const slide2Video = carouselSlide2.querySelector("video");
 
+//   function updateSlide2Video() {
+//     if (!slide2Video) return;
+
+//     if (window.innerWidth < 768) {
+//       slide2Video.src = "Ptak_Banner_HB2_mobile.mp4"; // mobile version
+//     } else {
+//       slide2Video.src = "Ptak_Banner_HB2.mp4"; // desktop version
+//     }
+//     slide2Video.load();
+//   }
+
+//   // Initial check
+//   updateSlide2Video();
+
+//   // Update on resize
+//   window.addEventListener("resize", updateSlide2Video);
+// });
