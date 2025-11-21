@@ -107,3 +107,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   scrollElements.forEach((el) => observer.observe(el));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const aboutMeCard = document.querySelector(".about-me.card");
+
+  if (aboutMeCard) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scrolled-into-view");
+          }
+        });
+      },
+      { threshold: 0.3 } // trigger when 30% visible
+    );
+
+    observer.observe(aboutMeCard);
+  }
+});
