@@ -418,6 +418,14 @@ header {
   margin: -140px auto 30px auto;
 }
 
+@media (max-width: 800px) {
+  .about-me img {
+    width: 250px;
+    height: 250px;
+    margin: -125px auto 20px auto; /* smaller negative margin */
+  }
+}
+
 .about-float {
   animation: floatY 4s ease infinite;
 }
@@ -917,6 +925,12 @@ footer {
   .about-me img {
     width: 250px;
     height: 250px;
+    margin: -125px auto 20px auto; /* reduce negative margin for mobile */
+  }
+
+  .about-me.card.scroll-animate {
+    opacity: 1 !important; /* make sure it’s visible */
+    transform: translateY(0) !important;
   }
 }
 
