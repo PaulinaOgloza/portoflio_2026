@@ -420,9 +420,9 @@ header {
 
 @media (max-width: 800px) {
   .about-me img {
-    width: 250px;
-    height: 250px;
-    margin: -125px auto 20px auto; /* smaller negative margin */
+    margin: 0 auto 15px auto; /* remove negative top margin */
+    width: 200px;
+    height: 200px;
   }
 }
 
