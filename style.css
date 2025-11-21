@@ -307,9 +307,104 @@ header {
   }
 }
 
-/* Apply subtle pulsing glow */
-.home-card {
-  animation: pulse-border 6s infinite ease-in-out;
+/* Card titles */
+.home-card .card-title {
+  font-family: "Poppins", sans-serif; /* clean, modern */
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: #fff; /* soft white */
+  margin-bottom: 1rem;
+  text-align: center; /* center aligns title nicely */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Optional: subtle scale-up on hover */
+.home-card:hover .card-title {
+  transform: scale(1.05);
+}
+
+/* Card text */
+/* Card titles */
+.home-card .card-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500; /* lighter than before */
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Optional: subtle scale-up on hover */
+.home-card:hover .card-title {
+  transform: scale(1.02);
+}
+
+/* Card text */
+.home-card .card-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem; /* bigger for readability */
+  line-height: 1.8; /* more spacing between lines */
+  color: #e5e5e5;
+  text-align: center;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease, opacity 0.5s ease;
+  padding: 0 1rem;
+}
+
+/* Reveal text on hover */
+.home-card:hover .card-text {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+/* Optional: staggered fade-in for paragraphs */
+.home-card .card-text p {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.home-card:hover .card-text p:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.home-card:hover .card-text p:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.25s;
+}
+
+.home-card:hover .card-text p:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+/* Responsive scaling */
+@media (max-width: 768px) {
+  .home-card .card-title {
+    font-size: 1.5rem;
+  }
+  .home-card .card-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-card .card-title {
+    font-size: 1.3rem;
+  }
+  .home-card .card-text {
+    font-size: 1.1rem;
+  }
 }
 
 /* LINE */
@@ -442,17 +537,12 @@ header {
   }
 }
 
-/* About Me scroll animation for mobile */
 @media (max-width: 800px) {
+  /* Always visible About Me card on mobile */
   .about-me.card {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .about-me.card.scrolled-into-view {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* fully visible */
+    transform: translateY(0); /* no offset */
+    transition: none; /* remove fade-in effect */
   }
 
   /* Image size and float effect */
@@ -461,11 +551,7 @@ header {
     height: 250px;
     margin: -125px auto 20px auto;
     transition: transform 2s ease-in-out;
-  }
-
-  /* optional gentle floating animation */
-  .about-me.card.scrolled-into-view img.about-float {
-    animation: floatY 4s ease-in-out infinite;
+    animation: floatY 4s ease-in-out infinite; /* always floating */
   }
 
   @keyframes floatY {
