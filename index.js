@@ -85,33 +85,23 @@ document.addEventListener("DOMContentLoaded", () => {
     videoOverlay.style.display = "flex";
   });
 
-  // Initialize video
   video.muted = true;
   videoSource.src = sources[720];
   video.load();
   hideLoader();
 
-  // ===== Scroll animations =====
+  // ===== Scroll animations (Disabled on Mobile) =====
+  const isMobile = window.innerWidth < 800;
+
   const scrollElements = document.querySelectorAll(".scroll-animate");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("scrolled-into-view");
-        }
-      });
-    },
-    { threshold: 0.1 } // smaller threshold for mobile
-  );
-
-  scrollElements.forEach((el) => observer.observe(el));
-});
-
-document.addEventListener("DOMContentLoaded", () => {
   const aboutMeCard = document.querySelector(".about-me.card");
 
-  if (aboutMeCard) {
+  if (isMobile) {
+    // Immediately activate ALL scroll-animation elements on mobile
+    scrollElements.forEach((el) => el.classList.add("scrolled-into-view"));
+    if (aboutMeCard) aboutMeCard.classList.add("scrolled-into-view");
+  } else {
+    // Desktop: enable scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -120,9 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.3 } // trigger when 30% visible
+      { threshold: 0.1 }
     );
 
-    observer.observe(aboutMeCard);
+    scrollElements.forEach((el) => observer.observe(el));
+
+    if (aboutMeCard) {
+      observer.observe(aboutMeCard);
+    }
   }
 });
