@@ -152,49 +152,58 @@
 
   <!-- REEL -->
   <p class="line py-1 text-center"></p>
-  <section>
-    <section class="reel-section darkblue-background py-5 pt-0">
-       <div class="scroll-inner ">
-      <p id="watch-reel" class="section-title demo-reel-title display-2 text-center pt-5"> 2025 DEMO REEL </p>
-      <div class="row justify-content-center rounded-4 shadow-sm">
-        <div class="col-md-9">
-          <div class="darkblue-background">
-            <div class="card-body pt-3 reel-wrapper scroll-animate">
-              <!-- Video Container -->
+  
+   <section class="reel-section darkblue-background py-5 pt-0">
+  <div class="scroll-inner">
+    <p id="watch-reel" class="section-title demo-reel-title display-2 text-center pt-5">
+      2025 DEMO REEL
+    </p>
+    <div class="row justify-content-center rounded-4 shadow-sm">
+      <div class="col-md-9">
+        <div class="darkblue-background">
+          <div class="card-body pt-3 scroll-animate">
+            <!-- Video Container Wrapper -->
+            <div class="reel-wrapper ratio ratio-16x9 video-wrapper  position-relative">
+              
+              <!-- Video -->
+              <video id="remoteVideo" autoplay loop controls muted playsinline preload="none" poster="thumbnail_blue.jpg">
+                <source id="videoSource" src="REEL2025_720.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+
+              <!-- Loading spinner -->
+              <div class="loading-spinner" id="videoLoader"></div>
+
+              <!-- Overlay inside wrapper -->
               <div id="videoOverlay" class="video-overlay">
                 <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                   <circle cx="320" cy="320" r="320" fill="rgba(0,0,0,0.5)" />
                   <polygon points="230,180 230,460 460,320" fill="#fff"/>
                 </svg>
               </div>
-              <div class="ratio ratio-16x9 position-relative">
-                <video id="remoteVideo" autoplay loop controls muted playsinline preload="none" poster="thumbnail_blue.jpg">
-                  <source id="videoSource" src="REEL2025_720.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-                <!-- Loading spinner -->
-                <div class="loading-spinner" id="videoLoader"></div>
-              </div>
-              <!-- Quality Selector -->
-              <div class="text-center mt-3">
-                <label for="videoQuality" class="me-2">Quality:</label>
-                <select id="videoQuality" class="form-select w-auto d-inline-block">
-                  <option value="720" selected>720p (Recommended)</option>
-                  <option value="1080">1080p (High Quality)</option>
-                </select>
-              </div>
-              <!-- Mute Button -->
-              <div class="darkblue-background cardcard mx-auto">
-                <div class="text-center my-3">
-                  
-                </div>
-              </div>
             </div>
+
+            <!-- Quality Selector -->
+            <div class="text-center mt-3">
+              <label for="videoQuality" class="me-2">Quality:</label>
+              <select id="videoQuality" class="form-select w-auto d-inline-block">
+                <option value="720" selected>720p (Recommended)</option>
+                <option value="1080">1080p (High Quality)</option>
+              </select>
+            </div>
+
+            <!-- Mute Button -->
+            <div class="darkblue-background cardcard mx-auto">
+              <div class="text-center my-3"></div>
+            </div>
+
           </div>
         </div>
-      </div></div>
-    </section>
-  </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- ABOUT ME -->
   <p id="about-me" class="section-line"></p>
