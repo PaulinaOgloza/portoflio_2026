@@ -325,11 +325,6 @@ header {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Optional: subtle scale-up on hover */
-.home-card:hover .card-title {
-  transform: scale(1.05);
-}
-
 /* Card text */
 /* Card titles */
 .home-card .card-title {
@@ -499,7 +494,7 @@ header {
   border: none;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  text-align: left;
   gap: 2px;
   border-radius: 20px;
   padding: 20px 15px;
@@ -571,10 +566,25 @@ header {
   }
 }
 
-/* REEL */ /* ===== Reel Section ===== */
+/* REEL */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto; /* scale proportionally */
+  object-fit: contain; /* prevent cropping */
+  border-radius: inherit; /* inherit from wrapper */
+}
+
 .reel-section {
   position: relative;
-  padding: 8rem; /* space top and bottom */
+  padding: 8rem;
   background: radial-gradient(
     circle at top,
     rgba(17, 9, 22, 0.7),
@@ -607,6 +617,7 @@ header {
   align-items: center;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.3); /* optional overlay */
+  border-radius: inherit;
 }
 .video-overlay svg {
   width: 4rem;
@@ -635,7 +646,9 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 3;
-} /* CONTACT */
+}
+
+/* CONTACT */
 .contact-section {
   position: relative;
   background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
@@ -1016,7 +1029,7 @@ footer {
 /* ===========================
    1300px+
 =========================== */
-@media (min-width: 1300px) {
+@media (min-width: 800px) {
   .carousel-item {
     height: 400px;
   }
@@ -1150,22 +1163,22 @@ footer {
 /* HOVER ON MOBILE */
 
 @media (max-width: 800px) {
-  /* ----- About Me ----- */
+  /* ----- About Me Card ----- */
   .about-me.card {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-    background: rgba(255, 255, 255, 0.08); /* light frosted fallback */
+    background: rgba(255, 255, 255, 0.08);
     transform: none !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
     transition: none !important;
   }
 
-  /* ----- About Me Image sticking out ----- */
+  /* ----- About Me Image ----- */
   .about-me img.about-float {
     animation: none !important;
     width: 200px;
     height: 200px;
-    margin: -100px auto 15px auto; /* sticks out above the card */
+    margin: -100px auto 15px auto;
     border-radius: 50%;
     display: block;
     transition: none;
@@ -1178,26 +1191,33 @@ footer {
     transition: none !important;
   }
 
-  /* ----- Disable hover animations ----- */
-  .home-card:hover,
+  /* ----- Disable Hover Effects ----- */
   .about-me.card:hover,
-  .contact-section .glass-card:hover,
-  .home-card .card-title:hover {
+  .contact-section .glass-card:hover {
     transform: none !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
   }
 
-  /* ----- Disable infinite animations ----- */
+  /* ----- Disable Infinite Animations ----- */
   .learn-more-btn,
   .send-email-btn,
   .icon {
     animation: none !important;
   }
 
-  /* ----- Reel Video ----- */
+  /* ----- Reel Video Adjustments ----- */
   .reel-section video {
     filter: none !important;
-    border-radius: 14px;
+    border-radius: 20px; /* consistent rounding on mobile */
+  }
+
+  .video-wrapper {
+    border-radius: 20px !important;
+    overflow: hidden !important;
+  }
+
+  .video-overlay {
+    border-radius: 20px !important;
   }
 
   /* ----- Shadows ----- */
@@ -1207,29 +1227,22 @@ footer {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
   }
 
-  /* ----- Font size adjustments ----- */
-  .about-me img {
-    width: 200px;
-    height: 200px;
-    margin: -100px auto 15px auto; /* sticks out above the card */
-  }
-
+  /* ----- Font Sizes ----- */
   .home-card .card-title,
   .home-card .card-text {
     font-size: 1.6rem !important;
   }
 
-  /* ----- Hero / Carousel captions ----- */
   .carousel-caption .text-carousel {
     font-size: 2rem !important;
     line-height: 1.2 !important;
     margin-bottom: 1rem !important;
   }
 
-  /* ----- Contact card ----- */
+  /* ----- Contact Card ----- */
   .contact-section .glass-card {
-    background: #ffffff !important; /* white card */
-    color: #0e1018 !important; /* text dark for readability */
+    background: #ffffff !important;
+    color: #0e1018 !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
   }
 }
