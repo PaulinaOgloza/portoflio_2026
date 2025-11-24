@@ -1143,26 +1143,87 @@ footer {
 
 /* HOVER ON MOBILE */
 
-@media (hover: none) {
-  /* About Me Card */
+@media (max-width: 800px) {
+  /* ----- About Me ----- */
   .about-me.card {
-    transform: translateY(0); /* prevent jump on touch */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.08); /* light frosted fallback */
+    transform: none !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+    transition: none !important;
+  }
+
+  /* ----- About Me Image sticking out ----- */
+  .about-me img.about-float {
+    animation: none !important;
+    width: 200px;
+    height: 200px;
+    margin: -100px auto 15px auto; /* sticks out above the card */
+    border-radius: 50%;
+    display: block;
     transition: none;
   }
 
-  /* Contact Card Glass */
+  /* ----- Disable Scroll Animations ----- */
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* ----- Disable hover animations ----- */
+  .home-card:hover,
+  .about-me.card:hover,
+  .contact-section .glass-card:hover,
+  .home-card .card-title:hover {
+    transform: none !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  /* ----- Disable infinite animations ----- */
+  .learn-more-btn,
+  .send-email-btn,
+  .icon {
+    animation: none !important;
+  }
+
+  /* ----- Reel Video ----- */
+  .reel-section video {
+    filter: none !important;
+    border-radius: 14px;
+  }
+
+  /* ----- Shadows ----- */
+  .about-me .card-body,
+  .home-card,
+  .glass-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  /* ----- Font size adjustments ----- */
+  .about-me img {
+    width: 200px;
+    height: 200px;
+    margin: -100px auto 15px auto; /* sticks out above the card */
+  }
+
+  .home-card .card-title,
+  .home-card .card-text {
+    font-size: 1.6rem !important;
+  }
+
+  /* ----- Hero / Carousel captions ----- */
+  .carousel-caption .text-carousel {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* ----- Contact card ----- */
   .contact-section .glass-card {
-    transform: translateY(0);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: none;
-  }
-}
-
-@media (hover: none) {
-  .home-card {
-    transform: translateY(0);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* original default */
-    transition: none; /* disable hover animation */
+    background: #ffffff !important; /* white card */
+    color: #0e1018 !important; /* text dark for readability */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
   }
 }
