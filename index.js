@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const sources = {
     720: "REEL2025_720.mp4",
-    1080: "/Reel2025_HD.mp4",
+    1080: "Reel2025_HD.mp4",
   };
 
   function showLoader() {
@@ -120,3 +120,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+const videos = document.querySelectorAll(".reel-video");
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        const src = video.querySelector("source").getAttribute("data-src");
+        if (src) {
+          video.querySelector("source").src = src;
+          video.load(); // load the video now
+        }
+        observer.unobserve(video); // stop observing after loaded
+      }
+    });
+  },
+  { threshold: 0.25 }
+); // 25% visible triggers loading
+
+videos.forEach((video) => observer.observe(video));
