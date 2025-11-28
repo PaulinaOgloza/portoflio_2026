@@ -278,6 +278,7 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   color: white;
+    animation: pulse-border-light 10s infinite ease-in-out;
 }
 .home-card .card-text {
   max-height: 0;
@@ -759,12 +760,9 @@ header {
   right: 20px;
 }
 
-
-  .illustration-thumb-wrapper,
-  .home-card {
-    animation: glow 3s ease-in-out infinite;
-  }
-
+.illustration-thumb-wrapper {
+  animation: glow 3s ease-in-out infinite;
+}
 
 @keyframes glow {
   0% {
@@ -890,7 +888,7 @@ header {
 }
 .mute-btn:hover {
   /* background: linear-gradient(90deg, #3f5efb 0%, #fc466b 100%); */ /* background: linear-gradient(90deg, #3f5efb 0%, rgb(129, 63, 251)); */
-  background: linear-gradient(90deg, #3f5efb 0%, #bc4d99 100%);
+  background: linear-gradient(90deg, #3f5efb 0%, #bc4d99 100%)
   transform: translateY(
     -3px
   ); /* box-shadow: 0 0 15px rgba(255, 120, 244, 0.596), 0 0 20px #6639afa9,0 0 30px #452b8b9d; */
@@ -1352,7 +1350,7 @@ footer {
 
   /* ----- Shadows ----- */
   .about-me .card-body,
-  .home-card,
+  /* .home-card, */
   .glass-card {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
   }
