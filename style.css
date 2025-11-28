@@ -759,12 +759,6 @@ header {
   right: 20px;
 }
 
-/* @media (min-width: 1200px) {
-  .illustration-thumb-wrapper,
-  .home-card {
-    animation: glow 3s ease-in-out infinite;
-  }
-} */
 
   .illustration-thumb-wrapper,
   .home-card {
