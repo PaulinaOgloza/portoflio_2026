@@ -1448,3 +1448,32 @@ footer {
 .recommendation-author {
   padding: 2rem 1.5rem; 
 }
+
+.linkedin-link {
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: radial-gradient(circle, #4c3ffb 0%, #3f5efb);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.linkedin-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.linkedin-icon {
+  width: 18px;
+  height: 18px;
+  transition: color 0.25s ease, transform 0.25s ease;
+  color:radial-gradient(circle, #4c3ffb 0%, #3f5efb)
+}
+
+.linkedin-link:hover .linkedin-icon {
+  color: radial-gradient(circle, #4c3ffb 0%, #3f5efb);
+  transform: scale(1.15);
+}
+
+
