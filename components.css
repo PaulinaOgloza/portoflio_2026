@@ -1,0 +1,37 @@
+.home-card {
+  position: relative;
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.home-card .card-title,
+.home-card .card-text {
+  text-align: center;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.send-email-btn,
+.learn-more-btn,
+.mute-btn,
+.unmute-btn {
+  border-radius: 36px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 1.6em;
+  height: 1.6em;
+  display: inline-block;
+}

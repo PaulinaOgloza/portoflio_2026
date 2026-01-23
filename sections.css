@@ -1,0 +1,34 @@
+.reel-section {
+  position: relative;
+  padding: 8rem;
+  background: radial-gradient(
+    circle at top,
+    rgba(17, 9, 22, 0.7),
+    rgba(15, 20, 40, 0.95)
+  );
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-me img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+}
+
+.contact-section {
+  background: linear-gradient(90deg, #fc466b, #3f5efb);
+  border-radius: 20px;
+  color: #0e1018;
+}
+
+.illustration-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}

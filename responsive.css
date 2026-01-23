@@ -1,0 +1,22 @@
+@media (max-width: 800px) {
+  .about-me img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px;
+  }
+
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .reel-section {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .reel-section video {
+    border-radius: 14px;
+  }
+}

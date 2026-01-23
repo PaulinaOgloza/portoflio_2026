@@ -433,7 +433,7 @@ header {
   line-height: 1.9;
   font-size: 1.8rem;
   color: #f8f8f8; /* bright but soft white */
-  text-align: center; /* Left-align text for readability */
+  text-align: center; 
   max-width: 700px; /* Prevent lines from stretching too far */
   margin: 0 auto 1.5rem; /* Center the block with spacing below */
   line-height: 1.8; /* Slightly more spacing between lines */
@@ -1195,11 +1195,11 @@ footer {
   .about-me img {
     width: 250px;
     height: 250px;
-    margin: -125px auto 20px auto; /* reduce negative margin for mobile */
+    margin: -125px auto 20px auto; 
   }
 
   .about-me.card.scroll-animate {
-    opacity: 1 !important; /* make sure it’s visible */
+    opacity: 1 !important; 
     transform: translateY(0) !important;
   }
 }
@@ -1208,7 +1208,7 @@ footer {
    Home boxes layout
 =========================== */
 
-/* force row alignment on large screens */
+
 .home-boxes .row {
   display: flex;
   flex-wrap: nowrap;
@@ -1387,4 +1387,57 @@ footer {
 
 .modal {
   z-index: 1060; /* above navbar and overlays */
+}
+
+
+
+
+
+
+
+/* Keep your current style, just add this tweak */
+
+.recommendation-card {
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  width: 90%;
+  min-height: 300px;
+  color: #0e1018;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  padding: 2rem 1.5rem; /* keep padding constant */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.recommendation-preview {
+  /* always visible part */
+  padding: 3rem 1.5rem;
+  border-radius: 20px;
+  line-height: 1.9;
+  font-size: 1.8rem;
+  text-align: left; 
+  max-width: 700px; /* Prevent lines from stretching too far */
+  margin: 0 auto 1.5rem; /* Center the block with spacing below */
+  line-height: 1.8; /* Slightly more spacing between lines */
+  font-size: 1.8rem; /* Maintain your current font size */
+  word-break: break-word;
+  display: block;
+  line-height: 1.5;
+}
+
+.recommendation-text {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.s ease;
+}
+.recommendation-card:hover .recommendation-text {
+  max-height: 100vh;
+  opacity: 1;
+  padding: 3rem 1.5rem; /* same as hover */
+  /* no padding change needed */
 }
