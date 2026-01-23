@@ -1398,24 +1398,25 @@ footer {
 /* Keep your current style, just add this tweak */
 
 .recommendation-card {
-  background: rgba(255, 255, 255, 0.9);
+   background: rgba(255, 255, 255, 0.9);
   max-width: 700px;
   width: 90%;
   min-height: 300px;
   color: #0e1018;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   border-radius: 20px;
-  padding: 2rem 1.5rem; /* keep padding constant */
+  padding: 2rem 1.5rem;   /* always constant */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .recommendation-preview {
-  /* always visible part */
-  padding: 3rem 1.5rem;
+  padding: 2rem 1.5rem;  padding: 3rem 1rem;
   border-radius: 20px;
   line-height: 1.9;
   font-size: 1.8rem;
@@ -1430,14 +1431,20 @@ footer {
 }
 
 .recommendation-text {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.s ease;
+  padding: 2rem 1.5rem; 
+  margin: 0;
 }
-.recommendation-card:hover .recommendation-text {
-  max-height: 100vh;
-  opacity: 1;
-  padding: 3rem 1.5rem; /* same as hover */
-  /* no padding change needed */
+
+.recommendation-text-wrapper {
+  max-height: 0;                  /* hidden initially */
+  overflow: hidden;
+  transition: max-height 0.5s ease;  /* smooth grow and shrink */
+}
+
+.recommendation-card:hover .recommendation-text-wrapper {
+  max-height: 500px;              /* adjust to fit text */
+}
+
+.recommendation-author {
+  padding: 2rem 1.5rem; 
 }
